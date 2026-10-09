@@ -11,7 +11,14 @@
 <meta property="og:url" content="https://nathanielenglana.github.io/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="/assets/style.css">
-<!-- GA4 -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-78073NRQ32"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-78073NRQ32');
+</script>
 </head>
 <body>
 <header class="site-header">
@@ -84,12 +91,11 @@
     </ul>
   </section>
 
-  <section id="tracking" hidden>
+  <section id="tracking">
     <h2>How this site is tracked</h2>
     <div class="block">
       <p>This site is also my practice ground for analytics. Every page carries a Google Analytics 4 tag with enhanced measurement on, so page views, scrolls, outbound clicks and file downloads are recorded.</p>
-      <p>On top of that I send three custom events: <code>resume_download</code> when someone opens the resume, <code>contact_click</code> for the email and LinkedIn links, and <code>project_view</code> with the project name on each project page. <code>contact_click</code> is marked as the key event.</p>
-      <p>The site is verified in Google Search Console with a sitemap submitted, and the GA4 data feeds a Looker Studio dashboard with users and sessions over time, top pages, traffic sources and event counts. Links I share carry UTM parameters so the source report shows where visits come from.</p>
+      <p>On top of that I send three custom events: <code>resume_download</code> when someone opens the resume, <code>contact_click</code> for the email and LinkedIn links, and <code>project_view</code> with the project name on each project page.</p>
     </div>
   </section>
 
