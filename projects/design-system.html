@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content and design system | Nathaniel Englana</title>
+<meta name="description" content="A brand brief, a design system and two Claude Code commands that turn a topic into a finished social post.">
+<link rel="canonical" href="https://nathanielenglana.github.io/projects/design-system.html">
+<link rel="stylesheet" href="/assets/style.css">
+<!-- GA4 -->
+</head>
+<body data-project="design-system">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">Nathaniel Englana</a>
+    <nav>
+      <a href="/#work">Work</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Personal project. 2026</p>
+    <h1>Content and design system</h1>
+    <p class="lead">NF.ai is a business project of mine: AI assistants that answer WhatsApp enquiries and take bookings for small businesses. I wanted its social posts to look like one brand without designing each one by hand, so I wrote the brand down as a system and built a small content pipeline around it in Claude Code.</p>
+  </section>
+
+  <section>
+    <h2>The system</h2>
+    <div class="split">
+      <div>
+        <p>One brief holds everything a designer or an AI tool needs: the positioning, the voice rules, the logo rules, colour, type, spacing, grid and a shape vocabulary.</p>
+        <div class="swatches" aria-label="NF.ai blue ramp">
+          <div class="swatch"><i style="background:#0A0F2C"></i>900</div>
+          <div class="swatch"><i style="background:#16215C"></i>800</div>
+          <div class="swatch"><i style="background:#3652E3"></i>500</div>
+          <div class="swatch"><i style="background:#6F8CFA"></i>400</div>
+          <div class="swatch"><i style="background:#B9C8FF"></i>200</div>
+          <div class="swatch"><i style="background:#EEF2FF"></i>050</div>
+          <div class="swatch"><i style="background:#FFFFFF"></i>white</div>
+        </div>
+        <ul class="plain">
+          <li>Colour is a single blue ramp of seven steps. There is no second hue and no grey family.</li>
+          <li>The brief gives the WCAG contrast ratio for each text and background pairing in the ramp, and says which pairs are safe for body text, which only for large text, and which never.</li>
+          <li>Type is Geist on a modular scale, with one set of sizes for web and a larger set for a 1080px social canvas.</li>
+          <li>Spacing snaps to an 8px base unit.</li>
+          <li>Text always sits in a flat clear zone with no shape edges crossing it.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="/assets/nf-ai-post.png" alt="NF.ai social post: That 11pm booking request? Someone else answered it first." width="1080" height="1080" loading="lazy">
+        <figcaption>A post made by the pipeline, from a copy brief and the design system.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>The pipeline</h2>
+    <div class="block">
+      <h3>1. <code>/create-content</code></h3>
+      <p>Takes a topic and a post type and writes a copy brief: the key message, a headline with alternates, a subhead, the audience and the tone.</p>
+    </div>
+    <div class="block">
+      <h3>2. <code>/create-creative</code></h3>
+      <p>Reads that brief and packages the copy with the platform and format only. It adds no visual or layout direction.</p>
+    </div>
+    <div class="block">
+      <h3>3. Design</h3>
+      <p>The packaged copy goes to Claude Design together with the design system, which decides the composition, the shapes and the colour.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What I learned</h2>
+    <p>The first round of posts followed the brief and still came out wrong. The background artwork was as loud as the headline, and the shapes all carried the same weight. The brief had preferences in it but no hierarchy rules.</p>
+    <p>I rewrote it with a checklist to run before accepting any piece: where the eye lands first, what order it moves in, whether the size steps between tiers are large enough, and whether there is one emphasis zone. Each failure that had already happened once is listed by name.</p>
+    <p>I also tested how much direction to give. The design system plus the copy and the format produced good output. When I added my own visual direction on top, the results got worse, so the creative step now leaves it out on purpose.</p>
+    <a class="back" href="/#work">Back to all work</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Vincentius Nathaniel Englana, 2026</span>
+    <span><a href="mailto:nathanielenglana@gmail.com" data-event="contact_click" data-label="email footer">Email</a><a href="https://www.linkedin.com/in/nathaniel-englana-5242931b9" target="_blank" rel="noopener" data-event="contact_click" data-label="linkedin footer">LinkedIn</a></span>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

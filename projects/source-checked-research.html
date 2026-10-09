@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source-checked AI research | Nathaniel Englana</title>
+<meta name="description" content="How I research a topic with Claude Code and have a second agent check every quote against its source page.">
+<link rel="canonical" href="https://nathanielenglana.github.io/projects/source-checked-research.html">
+<link rel="stylesheet" href="/assets/style.css">
+<!-- GA4 -->
+</head>
+<body data-project="source-checked-research">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">Nathaniel Englana</a>
+    <nav>
+      <a href="/#work">Work</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Personal project. October 2026</p>
+    <h1>Source-checked AI research</h1>
+    <p class="lead">AI research tools return confident summaries with links attached, and the link does not always say what the summary says. I wanted a way of working where every claim in an outline can be traced to a sentence on a page that was really opened. I tried it on one topic: AI for construction submittal review.</p>
+  </section>
+
+  <section>
+    <h2>Rules</h2>
+    <p>The project folder starts with a rules file that Claude Code reads in every session.</p>
+    <ul class="plain">
+      <li>Every claim needs a fetched source. A search summary does not count.</li>
+      <li>Each claim comes with its URL and the exact sentence from the page that supports it.</li>
+      <li>Every claim gets a tag: <code>[verified]</code>, <code>[snippet]</code>, <code>[inferred]</code> or <code>[unknown]</code>.</li>
+      <li>A number from a vendor's marketing page is that vendor's claim, and gets written that way.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Steps</h2>
+    <div class="block">
+      <h3>1. Search check</h3>
+      <p>Search the exact phrase and list every result with its domain. Of the 9 results, 7 came from one vendor's site.</p>
+    </div>
+    <div class="block">
+      <h3>2. Outline and claims</h3>
+      <p>Research more widely than that one vendor: what a submittal is, how long reviews take, which AI tools exist and what they say they do. The output is an outline and a table of the factual claims the article would need, each with its link, quoted sentence and tag.</p>
+    </div>
+    <div class="block">
+      <h3>3. A second agent checks the quotes</h3>
+      <p>A separate agent gets only the claims, the URLs and the quoted sentences. It never sees the first agent's reasoning, so it cannot be talked into agreeing. It fetches each page again, looks for the sentence, and judges whether the sentence supports the claim.</p>
+    </div>
+    <div class="block">
+      <h3>4. Log the corrections</h3>
+      <p>Every claim that fails or only partly holds is logged with what was wrong and what was done about it.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Result</h2>
+    <div class="tiles">
+      <div class="tile"><b>13</b><span>claims</span></div>
+      <div class="tile"><b>21 of 21</b><span>quoted sentences found</span></div>
+      <div class="tile ok"><b>7</b><span>supported</span></div>
+      <div class="tile part"><b>6</b><span>partly supported</span></div>
+    </div>
+    <p>All 21 quoted sentences were on their pages, word for word. Six of the 13 claims still said more than their quote did, and those are the ones that get rewritten or cut before a draft.</p>
+
+    <div class="block">
+      <span class="badge">Partly supported</span>
+      <h3 style="margin-top:10px">Claim 12. Vendors cite a 30 to 40% submittal rejection rate.</h3>
+      <p>Quoted sentence from the source page:</p>
+      <blockquote>"The construction industry averages 30-40% rejection rates on construction submittals."</blockquote>
+      <p>The quote is real. The agent's verdict was that one vendor states this figure and gives no source for it, so the plural "vendors" in the claim is not supported. The claim becomes "one vendor puts it at 30 to 40%", or it comes out.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What I took from it</h2>
+    <p>Made-up quotes were not the problem in this run. The gap was between a real quote and a claim that stretched it, such as one company's number written as the industry's. A checker that only confirms the quote exists would have passed all 13 claims.</p>
+    <p>I use the same tags in my other work with AI, so that a guess never reaches a draft looking like a fact.</p>
+    <a class="back" href="/#work">Back to all work</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Vincentius Nathaniel Englana, 2026</span>
+    <span><a href="mailto:nathanielenglana@gmail.com" data-event="contact_click" data-label="email footer">Email</a><a href="https://www.linkedin.com/in/nathaniel-englana-5242931b9" target="_blank" rel="noopener" data-event="contact_click" data-label="linkedin footer">LinkedIn</a></span>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>
