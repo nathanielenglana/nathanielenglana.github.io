@@ -32,14 +32,32 @@
   <section class="hero">
     <p class="eyebrow">Personal project. 2026</p>
     <h1>Content and design system</h1>
-    <p class="lead">NF.ai is a business project of mine: AI assistants that answer WhatsApp enquiries and take bookings for small businesses. I wanted its social posts to look like one brand without designing each one by hand, so I wrote the brand down as a system and built a small content pipeline around it in Claude Code.</p>
+    <p class="lead">NF.ai is a business project of mine: AI assistants that answer WhatsApp enquiries and take bookings for small businesses. I wanted its social posts to look like one brand without designing each one by hand, so I wrote the brand down as a brief, had Claude Design build a full design system from it, and set up a small content pipeline around it in Claude Code.</p>
   </section>
 
   <section>
-    <h2>The system</h2>
+    <h2>What is in it</h2>
+    <div class="tiles">
+      <div class="tile"><b>8</b><span>token files</span></div>
+      <div class="tile"><b>22</b><span>components</span></div>
+      <div class="tile"><b>5</b><span>social post formats</span></div>
+      <div class="tile"><b>3</b><span>templates</span></div>
+    </div>
+    <ul class="plain">
+      <li>Tokens for colour, type, spacing, shape and motion, with semantic names on top so a dark surface is one class.</li>
+      <li>Components for buttons, cards, forms, alerts, dialogs and tabs, each with a short prompt file that tells an AI tool how to use it.</li>
+      <li>Three brand components that carry the look. <code>ModularField</code> draws the geometric artwork on a grid, and <code>MonoLabel</code> and <code>StatBlock</code> keep the monospace font to numbers and timestamps.</li>
+      <li>Two UI kits: 1080px social posts in five formats, and the sections of a marketing website.</li>
+      <li>Templates for a landing page and two kinds of social post, ready to copy and edit.</li>
+    </ul>
+    <p>The system has two registers. The approachable one uses the lighter blues, few shapes and rounder corners, for first-touch posts. The technical one uses the dark blues, denser artwork and sharper corners, for case studies and how-it-works content. Both use the same shapes and the same rules.</p>
+  </section>
+
+  <section>
+    <h2>The rules</h2>
     <div class="split">
       <div>
-        <p>One brief holds everything a designer or an AI tool needs: the positioning, the voice rules, the logo rules, colour, type, spacing, grid and a shape vocabulary.</p>
+        <p>The brief is the governing document. It holds the positioning, the voice rules, the logo rules, colour, type, spacing, grid and a shape vocabulary, and the design system follows it wherever the two disagree.</p>
         <div class="swatches" aria-label="NF.ai blue ramp">
           <div class="swatch"><i style="background:#0A0F2C"></i>900</div>
           <div class="swatch"><i style="background:#16215C"></i>800</div>
@@ -55,6 +73,7 @@
           <li>Type is Geist on a modular scale, with one set of sizes for web and a larger set for a 1080px social canvas.</li>
           <li>Spacing snaps to an 8px base unit.</li>
           <li>Text always sits in a flat clear zone with no shape edges crossing it.</li>
+          <li>Every social post is checked at feed thumbnail size. If the headline stops reading at 110px, the post isn't finished.</li>
         </ul>
       </div>
       <figure>
